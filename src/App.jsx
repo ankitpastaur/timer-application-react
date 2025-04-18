@@ -13,7 +13,8 @@ function App() {
       }, 1000);
     } else {
       clearInterval(intervalRef.current);
-    }
+    };
+    return () => clearInterval(intervalRef.current);
   }, [isRunning]);
 
   const handleStart = () => setIsRunning(true);
